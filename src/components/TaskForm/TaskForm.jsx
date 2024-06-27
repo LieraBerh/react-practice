@@ -1,12 +1,15 @@
 import { Button } from "../Button/Button";
 import css from "./TaskForm.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+// Імпортуємо генератор екшену
+import { addTask } from "../../redux/tasksSlice";
 
 export const TaskForm = () => {
-  const value = useSelector((state) => state.some.value);
+  const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
+    dispatch(addTask(form.elements.text.value));
     form.reset();
   };
 

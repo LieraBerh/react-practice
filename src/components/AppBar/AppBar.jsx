@@ -1,10 +1,8 @@
 import { StatusFilter } from "../StatusFilter/StatusFilter";
 import { TaskCounter } from "../TaskCounter/TaskCounter";
 import css from "./AppBar.module.css";
-import { useSelector } from "react-redux";
 
 export const AppBar = () => {
-  const value = useSelector((state) => state.some.value);
   return (
     <header className={css.wrapper}>
       <section className={css.section}>
